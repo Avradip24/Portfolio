@@ -3,6 +3,15 @@ import { fadeUp, staggerContainer } from '../utils/motion';
 
 export default function Experience() {
   const experiences = [
+
+    // Add this object to your experiences array in Experience.tsx:
+    {
+      role: "Programmer Analyst Intern",
+      company: "Cognizant Technology Solutions",
+      period: "02/2022 - 06/2022",
+      desc: "Contributed to large-scale distributed data processing systems using Apache Spark, wrote thorough module documentation, and participated in structured team code reviews.",
+      skills: ["Java", "Apache Spark", "SQL", "SparkSQL"]
+    },
     {
       role: "Backend & Data Engineer",
       company: "Cognizant Technology Solutions",

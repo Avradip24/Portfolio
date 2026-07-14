@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Chat from './components/Chat';
 import Contact from './components/Contact';
 import './App.css';
+import { useEffect } from 'react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -23,6 +24,11 @@ export default function App() {
   const Divider = () => (
     <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
   );
+
+  useEffect(() => {
+    // Force the browser to scroll to the very top on load
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-violet-500/30 overflow-x-hidden">

@@ -29,6 +29,14 @@ export default function About() {
             </p>
           </div>
 
+          <div className="group relative rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm p-4 transition-all duration-300 hover:border-violet-500/40 hover:bg-slate-900/60">
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none transition-opacity duration-300" />
+            <h4 className="font-mono text-xs uppercase tracking-wider text-violet-400 font-bold">Location</h4>
+            <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+              📍 Based in <strong>Wiesbaden</strong> (Willing to relocate to Berlin) <br />
+            </p>
+          </div>
+
           <div className="space-y-4">
             <div className="group relative rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm p-4 transition-all duration-300 hover:border-violet-500/40 hover:bg-slate-900/60">
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none transition-opacity duration-300" />

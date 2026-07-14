@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { fadeUp } from '../utils/motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaFileAlt } from 'react-icons/fa';
+import resumePdf from '../assets/Avradip_Mazumdar_CV.pdf';
 
 export default function Contact() {
   const links = [
-    { label: "Email", value: "rontymazumdar@gmail.com", href: "mailto:rontymazumdar@gmail.com", icon: <FaEnvelope /> },
-    { label: "LinkedIn", value: "linkedin.com/in/avradip-mazumdar", href: "https://linkedin.com/in/avradip-mazumdar", icon: <FaLinkedin /> },
-    { label: "GitHub", value: "github.com/avradip", href: "https://github.com/avradip", icon: <FaGithub /> },
-    { label: "Resume", value: "Download CV", href: "/resume.pdf", icon: <FaFileAlt /> }
+    { label: "Email", value: "rontymazumdar@gmail.com", href: "mailto:rontymazumdar@gmail.com", icon: <FaEnvelope />, isDownload: false },
+    { label: "LinkedIn", value: "linkedin.com/in/avradip-mazumdar", href: "https://linkedin.com/in/avradip-mazumdar", icon: <FaLinkedin />, isDownload: false },
+    { label: "GitHub", value: "github.com/avradip", href: "https://github.com/avradip", icon: <FaGithub />, isDownload: false },
+    // 1. Change this href to match your exact file name inside the public folder (e.g., /cv.pdf)
+    { label: "Resume", value: "Download CV", href: resumePdf, icon: <FaFileAlt />, isDownload: true}
   ];
 
   return (
@@ -33,6 +35,8 @@ export default function Contact() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              // 2. This line forces the browser to download the file if it is the resume card
+              download={link.isDownload ? "Avradip_Mazumdar_CV.pdf" : undefined}
               className="group relative flex items-center space-x-4 rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition-all duration-300 hover:border-violet-500/40 hover:bg-slate-900/60"
             >
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none transition-opacity duration-300" />
