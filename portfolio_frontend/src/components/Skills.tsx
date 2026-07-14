@@ -6,7 +6,7 @@ export default function Skills() {
     { name: "Languages", items: ["Python", "SQL", "Java", "C#", "TypeScript"] },
     { name: "Backend / Cloud", items: ["FastAPI", "Docker", "Azure", "CI/CD", "PostgreSQL"] },
     // Replace the "AI & ML" category in your skillCategories array inside Skills.tsx:
-    { name: "Frontend", items:["React.js, JavaScript, TypeScript, HTML5, CSS3"]},
+    { name: "Frontend", items:["React.js", "JavaScript", "TypeScript", "HTML5", "CSS3"]},
     { name: "AI & ML", items: ["PyTorch", "OpenCV", "LangChain", "LangGraph", "pgvector (RAG)", "scikit-learn", "Deep Learning"] },
     { name: "Systems / Web", items: ["React", "Camunda", "REST APIs", "Git", "GitLab"] }
   ];
