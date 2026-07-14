@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeUp } from '../utils/motion';
-import axios from 'axios';
 import { FaPaperPlane} from 'react-icons/fa';
 
 interface Message {
@@ -34,8 +33,20 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      const res = await axios.post('https://portfolio-8stu.onrender.com', { messages: updated });
-      setMessages(prev => [...prev, { role: 'assistant', content: res.data.reply }]);
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ messages: updated }),
+        });
+
+        // 💡 1. Add this line to parse the incoming JSON stream:
+        const data = await res.json();
+
+        // 💡 2. Change 'res.data.reply' to just 'data.reply' (or data.content depending on your backend keys):
+        setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
+
     } catch {
       setMessages(prev => [
         ...prev, 
