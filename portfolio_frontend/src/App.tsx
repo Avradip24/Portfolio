@@ -10,7 +10,7 @@ import './App.css';
 import { useEffect } from 'react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [,setActiveTab] = useState('home');
 
   const handleTabChange = (sectionId: string) => {
     setActiveTab(sectionId);

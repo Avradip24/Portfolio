@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeUp } from '../utils/motion';
 import axios from 'axios';
-import { FaPaperPlane, FaLightbulb } from 'react-icons/fa';
+import { FaPaperPlane} from 'react-icons/fa';
 
 interface Message {
   role: 'user' | 'assistant';

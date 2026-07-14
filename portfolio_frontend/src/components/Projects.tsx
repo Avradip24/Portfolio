@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../utils/motion';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Projects() {
   const projectList = [
