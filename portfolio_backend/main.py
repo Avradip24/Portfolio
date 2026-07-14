@@ -5,14 +5,22 @@ from pydantic import BaseModel
 from typing import List, Literal
 from openai import OpenAI
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
 app = FastAPI(title="Avradip Mazumdar Portfolio Backend")
 
+origins = [
+    "http://localhost:5173",
+    "https://portfolio-8stu.onrender.com",
+    "https://portfolio-ynx0mdt0-avradip24s-projects.vercel.app", # Your live Vercel domain
+    "*" # Permitted wildcard for development/testing
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
